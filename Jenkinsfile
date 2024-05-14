@@ -44,6 +44,9 @@ pipeline {
         }
     }
      stage('Sonar Analysis') {
+        tools {
+         jdk 'OracleJDK11'            
+        }
         environment {
             scannerHome = tool "${SONARSCANNER}"
         }
